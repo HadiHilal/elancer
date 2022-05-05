@@ -1,13 +1,24 @@
 <?php
 
-use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('cats' , [CategoriesController::class , 'index']);
-Route::get('cats/create' , [CategoriesController::class , 'create']);
-Route::post('cats/add' , [CategoriesController::class , 'add']);
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-Route::get('cats/edit/{id}' , [CategoriesController::class , 'edit']);
-Route::put('cats/update/{id}' , [CategoriesController::class , 'update']);
-Route::delete('cats/delete/{id}' , [CategoriesController::class , 'delete']);
+Route::get('/', function () {
+    return view('index');
+});
 
+require __DIR__.'/auth.php';
+
+require __DIR__.'/admin.php';
+
+require __DIR__.'/frontend.php';

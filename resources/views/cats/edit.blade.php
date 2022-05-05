@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <h1 class="mt-2 mb-3">edit {{$cat->name}}</h1>
-        <form action="{{ url('cats/update/' . $cat->id) }}" method="post">
+        <form action="{{route('admin.cats.update' , $cat->id)  }}" method="post">
             @method('put')
             <input type="hidden" name="id" value="{{$cat->id}}"/>
             @include('cats._form')

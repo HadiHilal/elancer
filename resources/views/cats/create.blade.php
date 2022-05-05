@@ -22,7 +22,7 @@
                 </ol>
             </div>
         @endif
-        <form action="{{ url('cats/add') }}" method="post">
+        <form action="{{route('admin.cats.store') }}" method="post">
             @include('cats._form')
         </form>
     </div>
